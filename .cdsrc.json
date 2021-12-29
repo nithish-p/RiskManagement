@@ -1,0 +1,26 @@
+ { 
+    "requires": {
+      "auth": {
+        "kind": "basic-auth",
+        "users": {
+          "risk.viewer@tester.sap.com": { 
+            "password": "initial", 
+            "ID" : "riskviewer",
+            "roles": [ "RiskViewer" ],
+            "userAttributes": { 
+                "email" : "risk.viewer@tester.sap.com"
+             }
+          },
+          "risk.manager@tester.sap.com": { 
+            "password": "initial", 
+            "ID" : "riskmanager",
+            "roles": [ "RiskManager" ],
+            "userAttributes": { 
+                "email" : "risk.manager@tester.sap.com"
+             }
+          }
+        }
+      }
+    }
+  }
+  
