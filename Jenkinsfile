@@ -10,3 +10,4 @@
 @Library('piper-lib-os') _
 
 piperPipeline script: this
+cloudFoundryDeploy script: this
