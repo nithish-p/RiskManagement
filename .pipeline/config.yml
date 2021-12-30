@@ -32,37 +32,36 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
-#  Release:
-#    cfTargets:
-#      - org: 'myOrg'
-#        space: 'mySpace'
-#        apiEndpoint: 'https://'
-#        appName: 'myAppName'
-#        manifest: 'manifest.yml'
-#        credentialsId: 'myDeploymentCredentialsId'
-
-Build:
-  mavenExecuteStaticCodeChecks: false
-  npmExecuteLint: false
-AdditionalUnitTests:
-  npmExecuteScripts: false
-  karmaExecuteTests: false
 Release:
-  cloudFoundryDeploy: true
-  tmsUpload: false
+   cfTargets:
+     - org: '7bc4c045trial'
+       space: 'devtr'
+       apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+       appName: ''
+       manifest: 'manifest.yml'
+       credentialsId: 'cfdeploy'
 
-Steps:
-  cloudFoundryDeploy:
-    cloudFoundry: 
-      apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
-      appName: ''
-      manifest: 'manifest.yml'
-      credentialsId: 'cfdeploy'
-      org: '7bc4c045trial'
-      space: 'devtr'
-    mtaDeployParameters: " -f --version-rule ALL"
-  artifactPrepareVersion:
-    versioningType: "cloud_noTag"
+# Build:
+#   mavenExecuteStaticCodeChecks: false
+#   npmExecuteLint: false
+# AdditionalUnitTests:
+#   npmExecuteScripts: false
+#   karmaExecuteTests: false
+# Release:
+#   cloudFoundryDeploy: true
+#   tmsUpload: false
+
+# Steps:
+#   cloudFoundryDeploy:
+#     cloudFoundry: 
+#       apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+#       appName: ''
+#       manifest: 'manifest.yml'
+#       credentialsId: 'cfdeploy'
+#       org: '7bc4c045trial'
+#       space: 'devtr'
+#     mtaDeployParameters: " -f --version-rule ALL"
+ 
 
 
 
